@@ -8,13 +8,11 @@ let lista = document.getElementById('listaAmigos');
 //Implementa una función para agregar amigos
 function agregarAmigo(){
     let amigo = document.getElementById("amigo").value;
-    console.log(amigo);
     if (amigo == ""){
         alert("Por favor, inserte un nombre.")
     } else {
         //Actualizar el array de amigos
         listaAmigos.push(amigo);
-        console.log(listaAmigos);
     }
     limpiarCaja();
     limpiarLista();
@@ -40,19 +38,24 @@ function actualizarLista(){
     let listaHTML = "";
     for (let amigo of listaAmigos){
         listaHTML += `<li>${amigo}</li>`;
-        console.log(listaHTML)
     }
     lista.innerHTML = listaHTML;
 }
 
 //Implementa una función para sortear los amigos
 
-/*
-Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
 
-Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice aleatorio del arreglo.
+function sortearAmigo(){
+    //Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
+    if (listaAmigos.length === 0){
+        lista.innerHTML = 'Por favor agregue amigos a su lista para poder realizar el sorteo'
+    } else {
+        //Generar un índice aleatorio
+        let indiceSorteado =  Math.floor(Math.random()*listaAmigos.length);
+        //Obtener el nombre sorteado
+        let amigoSorteado = listaAmigos[indiceSorteado];
+        //Mostrar el resultado
+        document.getElementById("resultado").innerHTML = amigoSorteado;
 
-Obtener el nombre sorteado: Utilizar el índice aleatorio para acceder al nombre correspondiente en el arreglo.
-
-Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando document.getElementById() 
-e innerHTML para mostrar el amigo sorteado.*/
+    }  
+}
