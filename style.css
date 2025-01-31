@@ -63,7 +63,7 @@ body {
 
 .section-title {
     font-family: "Inter", serif;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--color-primary);
     margin: 10px 0;
@@ -132,13 +132,13 @@ ul {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
+    text-align: center;
 }
 
 .result-list {
     margin-top: 15px;
     color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 24px;
     text-align: center;
 }
 

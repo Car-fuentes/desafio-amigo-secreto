@@ -8,8 +8,11 @@ let lista = document.getElementById('listaAmigos');
 //Implementa una función para agregar amigos
 function agregarAmigo(){
     let amigo = document.getElementById("amigo").value;
+    let regex = /^[a-zA-Z\s]{2,}$/;
     if (amigo == ""){
         alert("Por favor, inserte un nombre.")
+    } else if (!regex.test(amigo)){
+        alert("Por favor, ingrese solo letras y espacios, con al menos 2 caracteres.");
     } else {
         //Actualizar el array de amigos
         listaAmigos.push(amigo);
@@ -35,7 +38,8 @@ function limpiarLista(){
 //Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.
 
 function actualizarLista(){
-    let listaHTML = "";
+    let listaHTML = "<h4>Participantes:</h4>";
+
     for (let amigo of listaAmigos){
         listaHTML += `<li>${amigo}</li>`;
     }
@@ -55,7 +59,7 @@ function sortearAmigo(){
         //Obtener el nombre sorteado
         let amigoSorteado = listaAmigos[indiceSorteado];
         //Mostrar el resultado
-        document.getElementById("resultado").innerHTML = amigoSorteado;
+        document.getElementById("resultado").innerHTML = `El amigo secreto es: <b>${amigoSorteado}!</b>`;
 
     }  
 }
