@@ -12,7 +12,7 @@ function agregarAmigo(){
     if (amigo == ""){
         alert("Por favor, inserte un nombre.")
     } else if (!regex.test(amigo)){
-        alert("Por favor, ingrese solo letras y espacios, con al menos 2 caracteres.");
+        alert("Por favor, ingrese solo letras y espacios, al menos 2 caracteres.");
     } else {
         //Actualizar el array de amigos
         listaAmigos.push(amigo);
@@ -59,7 +59,7 @@ function sortearAmigo(){
         //Obtener el nombre sorteado
         let amigoSorteado = listaAmigos[indiceSorteado];
         //Mostrar el resultado
-        document.getElementById("resultado").innerHTML = `El amigo secreto es: <b>${amigoSorteado}!</b>`;
+        document.getElementById("resultado").innerHTML = `El amigo secreto es: <b>¡${amigoSorteado}!</b>`;
 
     }  
 }

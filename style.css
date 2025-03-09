@@ -63,10 +63,10 @@ body {
 
 .section-title {
     font-family: "Inter", serif;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
     color: var(--color-primary);
-    margin: 10px 0;
+    margin: 18px 0;
     text-align: center;
 }
 
